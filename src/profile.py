@@ -1,7 +1,11 @@
-import dataclasses
-import uuid
+from abc import ABC, abstractmethod
 
 
-@dataclasses
-class profile:
-    id: uuid
+class Profile(ABC):
+    @abstractmethod
+    def get_id(self) -> str:
+        pass
+
+    @abstractmethod
+    def calculate_distance_between(self, other_profile: Profile) -> float:
+        pass
